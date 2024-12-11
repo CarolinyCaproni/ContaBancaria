@@ -3,16 +3,43 @@ package contaBancaria;
 import java.util.Scanner;
 
 import contaBancaria.util.Cores;
+import contaBancaria.model.Conta;
 
 public class Menu {
 
 	public static void main(String[] args) {
+		
 		int opcao;
+		float valor, valorx;
 		
 		Scanner leia = new Scanner(System.in);
 		
+		// Instaciamento | Classe -> Objeto Utilizavel
+		Conta c1 = new Conta(123456, 0001, 1, "Maria das Neves", 500f);
+		
+		// Alteração do Saldo da conta
+		c1.setSaldo(5000f);
+		
+		// Exibição dos Dados da Conta
+		c1.visualizar();
+		
+		// Entrada do Valor de Saque
+		System.out.print("\n\nDigite o Valor que deseja Sacar: R$ ");
+		valor = leia.nextFloat();
+		// Processamento do Saque conforme o metodo localizado na classe Conta
+		c1.sacar(valor);
+		c1.visualizar();
+		
+		// Entrada do Valor do Deposito
+		System.out.print("\n\nDigite o Valor que deseja Depositar: R$ ");
+		valorx = leia.nextFloat();
+		// Processamento do Deposito conforme o metodo localizado na classe Conta
+		c1.depositar(valorx);
+		c1.visualizar();
+		
+		
 		while (true) {
-			System.out.println(Cores.TEXT_YELLOW + Cores.ANSI_BLACK_BACKGROUND + "*****************************************************");
+			System.out.println(Cores.TEXT_YELLOW + Cores.ANSI_BLACK_BACKGROUND + "\n*****************************************************");
 			System.out.println("                                                     ");
 			System.out.println("                BANCO DO BRAZIL COM Z                ");
 			System.out.println("                                                     ");
