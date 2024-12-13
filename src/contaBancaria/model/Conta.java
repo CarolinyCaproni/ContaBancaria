@@ -1,6 +1,7 @@
 package contaBancaria.model;
 
-public class Conta {
+// Classe Abstrata => Base para criar outras Classes
+public abstract class Conta {
 
 	// Atributos / Variaveis
 	private int numero;
@@ -101,11 +102,11 @@ public class Conta {
 		System.out.println("\n\n***********************************************************");
 		System.out.println("                     Dados da Conta:                       ");
 		System.out.println("***********************************************************");
-		System.out.println("              Numero da Conta: " + this.numero);
-		System.out.println("              Agência: " + this.agencia);
-		System.out.println("              Tipo da Conta: " + tipo);
-		System.out.println("              Titular: " + this.titular);
-		System.out.printf("              Saldo: R$ %.2f", this.saldo);
+		System.out.println("                 Numero da Conta: " + this.numero);
+		System.out.println("                 Agência: " + this.agencia);
+		System.out.println("                 Tipo da Conta: " + tipo);
+		System.out.println("                 Titular: " + this.titular);
+		System.out.printf("                 Saldo: R$ %.2f", this.saldo);
 		System.out.println("");
 	}
 
